@@ -1,0 +1,34 @@
+{
+  "applicationId": "js.neutralino.zero",
+  "version": "1.0.0",
+  "defaultMode": "window",
+  "documentRoot": "/code-kit-web/dist",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "nativeAllowList": [
+    "app.*"
+  ],
+  "modes": {
+    "window": {
+      "title": "code-kit",
+      "width": 800,
+      "height": 500,
+      "minWidth": 400,
+      "minHeight": 200,
+      "icon": "/code-kit-web/public/icon.png"
+    }
+  },
+  "cli": {
+    "binaryName": "code-kit",
+    "resourcesPath": "/code-kit-web/dist",
+    "extensionsPath": "/extensions/",
+    "clientLibrary": "/code-kit-web/public/neutralino.js",
+    "binaryVersion": "4.7.0",
+    "clientVersion": "3.6.0",
+    "frontendLibrary": {
+      "patchFile": "/code-kit-web/index.html",
+      "devUrl": "http://localhost:5173"
+  }
+  }
+}
