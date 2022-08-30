@@ -3,13 +3,16 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import DefaultLayout from "../layout/DefaultLayout";
 import MainScreen from "../screens/MainScreen";
 import MenuScreen from "../screens/MenuScreen";
+import UUIDScreen from "../screens/ToolScreens/UUIDScreen";
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route index element={<MenuScreen />} />
-          <Route path="about" element={<MainScreen />} />
+          {routeList.map((el, i) => (
+            <Route key={i} path={el.path} element={el.component} />
+          ))}
         </Route>
       </Routes>
     </BrowserRouter>
@@ -17,3 +20,10 @@ const Router = () => {
 };
 
 export default Router;
+
+export const routeList = [
+  {
+    component: <UUIDScreen />,
+    path: "uuid4",
+  },
+];

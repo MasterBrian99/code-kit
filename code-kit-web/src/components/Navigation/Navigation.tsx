@@ -16,6 +16,7 @@ import { useMantineColorScheme } from "@mantine/core";
 import { IconSun, IconMoonStars } from "@tabler/icons";
 import { ReactElement, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
+import { navigationItems } from "../../router/routeList";
 
 const useStyles = createStyles((theme) => ({
   navbar: {
@@ -140,17 +141,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const collections = [
-  { emoji: "👍", label: "Sales", link: "/about" },
-  { emoji: "🚚", label: "Deliveries", link: "/" },
-  { emoji: "💸", label: "Discounts", link: "/" },
-  { emoji: "💰", label: "Profits", link: "/" },
-  { emoji: "✨", label: "Reports", link: "/" },
-  { emoji: "🛒", label: "Orders", link: "/" },
-  { emoji: "📅", label: "Events", link: "/" },
-  { emoji: "🙈", label: "Debts", link: "/" },
-  { emoji: "💁‍♀️", label: "Customers", link: "/" },
-];
 interface Props {
   children: ReactElement;
 }
@@ -202,17 +192,29 @@ export default function Navigation({ children }: Props) {
 function SideBar() {
   const navigate = useNavigate();
   const { classes } = useStyles();
-  const collectionLinks = collections.map((collection) => (
-    <span
-      onClick={() => {
-        navigate(collection.link);
-      }}
-      key={collection.label}
-      className={classes.collectionLink}
-    >
-      <span style={{ marginRight: 9, fontSize: 16 }}>{collection.emoji}</span>{" "}
-      {collection.label}
-    </span>
+
+  const cList = navigationItems.map((collection, i) => (
+    <Navbar.Section className={classes.section} key={i}>
+      <Group className={classes.collectionsHeader} position="apart">
+        <Text size="xs" weight={500} color="dimmed">
+          {collection.menuName}
+        </Text>
+      </Group>
+      <div className={classes.collections}>
+        {collection.items.map((el) => (
+          <span
+            onClick={() => {
+              navigate(el.link);
+            }}
+            key={el.label}
+            className={classes.collectionLink}
+          >
+            <span style={{ marginRight: 9, fontSize: 16 }}>{el.emoji}</span>{" "}
+            {el.label}
+          </span>
+        ))}
+      </div>
+    </Navbar.Section>
   ));
   return (
     <Navbar p="md" className={classes.navbar}>
@@ -227,14 +229,15 @@ function SideBar() {
       />
 
       <ScrollArea offsetScrollbars>
-        <Navbar.Section className={classes.section}>
+        {cList}
+        {/* <Navbar.Section className={classes.section}>
           <Group className={classes.collectionsHeader} position="apart">
             <Text size="xs" weight={500} color="dimmed">
               Collections
             </Text>
           </Group>
           <div className={classes.collections}>{collectionLinks}</div>
-        </Navbar.Section>
+        </Navbar.Section> */}
       </ScrollArea>
     </Navbar>
   );
