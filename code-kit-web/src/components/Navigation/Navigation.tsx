@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react'
 import {
   createStyles,
   Navbar,
@@ -9,14 +10,13 @@ import {
   ScrollArea,
   AppShell,
   Header,
-} from "@mantine/core";
-import { IconSearch } from "@tabler/icons";
-import { Logo } from "./Logo";
-import { useMantineColorScheme } from "@mantine/core";
-import { IconSun, IconMoonStars } from "@tabler/icons";
-import { ReactElement, ReactNode } from "react";
-import { useNavigate } from "react-router-dom";
-import { navigationItems } from "../../router/routeList";
+} from '@mantine/core'
+import { IconSearch } from '@tabler/icons'
+import { Logo } from './Logo'
+import { useMantineColorScheme } from '@mantine/core'
+import { IconSun, IconMoonStars } from '@tabler/icons'
+import { useNavigate } from 'react-router-dom'
+import { navigationItems } from '../../router/routeList'
 
 const useStyles = createStyles((theme) => ({
   navbar: {
@@ -28,18 +28,16 @@ const useStyles = createStyles((theme) => ({
     paddingTop: 0,
     marginLeft: -theme.spacing.md,
     marginRight: -theme.spacing.md,
-    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     borderBottom: `1px solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
     }`,
   },
   section: {
     marginBottom: theme.spacing.md,
-    "&:not(:last-of-type)": {
+    '&:not(:last-of-type)': {
       borderBottom: `1px solid ${
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[4]
-          : theme.colors.gray[3]
+        theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
       }`,
     },
   },
@@ -48,11 +46,9 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 700,
     fontSize: 10,
     backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[7]
-        : theme.colors.gray[0],
+      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
     border: `1px solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[2]
+      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[2]
     }`,
   },
 
@@ -63,46 +59,38 @@ const useStyles = createStyles((theme) => ({
   },
 
   mainLink: {
-    display: "flex",
-    alignItems: "center",
-    width: "100%",
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
     fontSize: theme.fontSizes.xs,
     padding: `8px ${theme.spacing.xs}px`,
     borderRadius: theme.radius.sm,
     fontWeight: 500,
-    color:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[0]
-        : theme.colors.gray[7],
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
-      color: theme.colorScheme === "dark" ? theme.white : theme.black,
+        theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+      color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     },
   },
 
   mainLinkInner: {
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
     flex: 1,
   },
 
   mainLinkIcon: {
     marginRight: theme.spacing.sm,
-    color:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[2]
-        : theme.colors.gray[6],
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6],
   },
 
   mainLinkBadge: {
     padding: 0,
     width: 20,
     height: 20,
-    pointerEvents: "none",
+    pointerEvents: 'none',
   },
 
   collections: {
@@ -118,36 +106,32 @@ const useStyles = createStyles((theme) => ({
   },
 
   collectionLink: {
-    display: "block",
+    display: 'block',
     padding: `8px ${theme.spacing.xs}px`,
-    textDecoration: "none",
+    textDecoration: 'none',
     borderRadius: theme.radius.sm,
     fontSize: theme.fontSizes.xs,
-    color:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[0]
-        : theme.colors.gray[7],
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
     lineHeight: 1,
     fontWeight: 500,
-    cursor: "pointer",
+    cursor: 'pointer',
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
-      color: theme.colorScheme === "dark" ? theme.white : theme.black,
+        theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+      color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     },
   },
-}));
+}))
 
 interface Props {
-  children: ReactElement;
+  children: ReactElement
 }
 export default function Navigation({ children }: Props) {
-  const { classes } = useStyles();
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const dark = colorScheme === "dark";
+  const { classes } = useStyles()
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
+  const dark = colorScheme === 'dark'
 
   return (
     <>
@@ -164,7 +148,7 @@ export default function Navigation({ children }: Props) {
                 </Group>
                 <ActionIcon
                   variant="outline"
-                  color={dark ? "yellow" : "blue"}
+                  color={dark ? 'yellow' : 'blue'}
                   onClick={() => toggleColorScheme()}
                   title="Toggle color scheme"
                 >
@@ -177,21 +161,19 @@ export default function Navigation({ children }: Props) {
         styles={(theme) => ({
           main: {
             backgroundColor:
-              theme.colorScheme === "dark"
-                ? theme.colors.dark[8]
-                : theme.colors.gray[0],
+              theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
           },
         })}
       >
         {children}
       </AppShell>
     </>
-  );
+  )
 }
 
 function SideBar() {
-  const navigate = useNavigate();
-  const { classes } = useStyles();
+  const navigate = useNavigate()
+  const { classes } = useStyles()
 
   const cList = navigationItems.map((collection, i) => (
     <Navbar.Section className={classes.section} key={i}>
@@ -204,18 +186,17 @@ function SideBar() {
         {collection.items.map((el) => (
           <span
             onClick={() => {
-              navigate(el.link);
+              navigate(el.link)
             }}
             key={el.label}
             className={classes.collectionLink}
           >
-            <span style={{ marginRight: 9, fontSize: 16 }}>{el.emoji}</span>{" "}
-            {el.label}
+            <span style={{ marginRight: 9, fontSize: 16 }}>{el.emoji}</span> {el.label}
           </span>
         ))}
       </div>
     </Navbar.Section>
-  ));
+  ))
   return (
     <Navbar p="md" className={classes.navbar}>
       <TextInput
@@ -224,7 +205,7 @@ function SideBar() {
         icon={<IconSearch size={12} stroke={1.5} />}
         rightSectionWidth={70}
         rightSection={<Code className={classes.searchCode}>Ctrl + K</Code>}
-        styles={{ rightSection: { pointerEvents: "none" } }}
+        styles={{ rightSection: { pointerEvents: 'none' } }}
         mb="sm"
       />
 
@@ -240,5 +221,5 @@ function SideBar() {
         </Navbar.Section> */}
       </ScrollArea>
     </Navbar>
-  );
+  )
 }

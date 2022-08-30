@@ -1,22 +1,22 @@
 export const navigationItems = [
   {
-    menuName: "Crypto",
+    menuName: 'Crypto',
     items: [
       {
-        emoji: "🚚",
-        label: "UUIDs v4 generator",
-        link: "/uuid4",
+        emoji: '🚚',
+        label: 'UUIDs v4 generator',
+        link: '/uuid4',
       },
     ],
   },
   {
-    menuName: "Converter",
+    menuName: 'Converter',
     items: [
       {
-        emoji: "🚚",
-        label: "Color Converter",
-        link: "/color",
+        emoji: '🚚',
+        label: 'Color Converter',
+        link: '/color',
       },
     ],
   },
-];
+]

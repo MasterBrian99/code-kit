@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const MenuScreen = () => {
-  return <div>MenuScreen</div>;
-};
+  return <div>MenuScreen</div>
+}
 
-export default MenuScreen;
+export default MenuScreen

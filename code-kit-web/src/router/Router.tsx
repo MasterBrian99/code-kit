@@ -1,9 +1,8 @@
-import React from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import DefaultLayout from "../layout/DefaultLayout";
-import MainScreen from "../screens/MainScreen";
-import MenuScreen from "../screens/MenuScreen";
-import UUIDScreen from "../screens/ToolScreens/UUIDScreen";
+import React from 'react'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import DefaultLayout from '../layout/DefaultLayout'
+import MenuScreen from '../screens/MenuScreen'
+import UUIDScreen from '../screens/ToolScreens/UUIDScreen'
 const Router = () => {
   return (
     <BrowserRouter>
@@ -16,14 +15,14 @@ const Router = () => {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default Router;
+export default Router
 
 export const routeList = [
   {
     component: <UUIDScreen />,
-    path: "uuid4",
+    path: 'uuid4',
   },
-];
+]
