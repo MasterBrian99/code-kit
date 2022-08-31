@@ -6,8 +6,13 @@
   "url": "/",
   "enableServer": true,
   "enableNativeAPI": true,
+  "enableInspector": true,
   "nativeAllowList": [
-    "app.*"
+    "app.*",
+    "clipboard.*",
+    "os.*",
+    "filesystem.*",
+    "debug.log"
   ],
   "modes": {
     "window": {

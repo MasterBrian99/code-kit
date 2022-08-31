@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import DefaultLayout from '../layout/DefaultLayout'
 import MenuScreen from '../screens/MenuScreen'
-import UUIDScreen from '../screens/ToolScreens/UUIDScreen'
+import UUIDScreen from '../screens/ToolScreens/UUIDScreen/UUIDScreen'
 const Router = () => {
   return (
     <BrowserRouter>
