@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "dark-main":'#222339',
+        "dark-slate":"#6E767F"
+      }
+    },
   },
   plugins: [],
 }
