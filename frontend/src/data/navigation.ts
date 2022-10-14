@@ -1,7 +1,12 @@
 export const navigationData = [
   {
-    name: '',
-    icon: '',
-    path: '',
+    name: 'D',
+    items: [
+      {
+        name: '',
+        icon: '',
+        path: '',
+      },
+    ],
   },
 ];
