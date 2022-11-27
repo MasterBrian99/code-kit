@@ -12,7 +12,7 @@ import {
   InputLeftElement,
   useDisclosure,
 } from '@chakra-ui/react'
-
+import { Outlet } from 'react-router-dom'
 import { FaBell } from 'react-icons/fa'
 import { FiSearch, FiMenu } from 'react-icons/fi'
 import Navigation from '../components/Navigation/Navigation'
@@ -40,14 +40,14 @@ const AppLayout = () => {
           <Navigation w="full" borderRight="none" />
         </DrawerContent>
       </Drawer>
-      <Box
-        ml={{
-          base: 0,
-          md: 60,
-        }}
-        transition=".3s ease"
-      >
+
+      <Box w="full">
         <Flex
+          ml={{
+            base: 0,
+            md: 60,
+          }}
+          position={'fixed'}
           as="header"
           align="center"
           justify="space-between"
@@ -84,7 +84,13 @@ const AppLayout = () => {
             <Input placeholder="Search for articles..." />
           </InputGroup>
 
-          <Flex align="center">
+          <Flex
+            align="center"
+            mr={{
+              base: 0,
+              md: 60,
+            }}
+          >
             <Icon color="gray.500" as={FaBell} cursor="pointer" />
             <Avatar
               ml="4"
@@ -96,9 +102,18 @@ const AppLayout = () => {
           </Flex>
         </Flex>
 
-        <Box as="main" p="4">
+        <Box
+          as="main"
+          p="4"
+          ml={{
+            base: 0,
+            md: 60,
+          }}
+        >
           {/* Add content here, remove div below  */}
-          <Box borderWidth="4px" borderStyle="dashed" rounded="md" h="96" />
+          <Box p={'2'} rounded="md" mt={'10'}>
+            <Outlet />
+          </Box>
         </Box>
       </Box>
     </Box>
