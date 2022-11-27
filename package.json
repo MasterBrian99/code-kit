@@ -14,15 +14,17 @@
     "lint:styles-fix": "stylelint \"src/**/*.scss\" --fix",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,scss,md,json}\" ",
     "lint": "npm run lint:scripts && npm run lint:fix && npm run  lint:format && npm run lint:styles"
-   },
+  },
   "dependencies": {
-    "@chakra-ui/react": "^2.3.7",
+    "@chakra-ui/icons": "^2.0.12",
+    "@chakra-ui/react": "^2.4.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@tauri-apps/api": "^1.1.0",
-    "framer-motion": "^7.6.5",
+    "framer-motion": "^7.6.12",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.1.0",

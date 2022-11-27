@@ -1,5 +1,7 @@
+import AppLayout from './layout/AppLayout'
+
 function App() {
-  return <h1>Hello</h1>
+  return <AppLayout />
 }
 
 export default App
