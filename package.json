@@ -1,0 +1,50 @@
+{
+  "name": "code-kit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "lint:scripts": "eslint --ext .ts,.tsx src",
+    "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "lint:styles-fix": "stylelint \"src/**/*.scss\" --fix",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,scss,md,json}\" ",
+    "lint": "npm run lint:scripts && npm run lint:fix && npm run  lint:format && npm run lint:styles"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.12",
+    "@chakra-ui/react": "^2.4.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@tauri-apps/api": "^1.1.0",
+    "framer-motion": "^7.6.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0",
+    "react-router-dom": "^6.4.3"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.1.0",
+    "@types/node": "^18.7.10",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@vitejs/plugin-react": "^2.0.0",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4",
+    "vite": "^3.0.2"
+  }
+}
