@@ -1,14 +1,35 @@
+import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core';
+import { useHotkeys, useLocalStorage } from '@mantine/hooks';
+
+import MainScreen from './screens/MainScreen/MainScreen';
+import theme from './theme/theme';
+
 function App() {
   //   const updateResultText = (result: string) => setResultText(result);
 
   //   function greet() {
   //     Greet(name).then(updateResultText);
   //   }
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+    key: 'mantine-color-scheme',
+    defaultValue: 'light',
+    getInitialValueInEffect: true,
+  });
 
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
+
+  useHotkeys([['mod+J', () => toggleColorScheme()]]);
   return (
-    <div id="App">
-      <h1>as</h1>
-    </div>
+    <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+      <MantineProvider
+        theme={{ ...theme, colorScheme }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
+        <MainScreen />
+      </MantineProvider>
+    </ColorSchemeProvider>
   );
 }
 
