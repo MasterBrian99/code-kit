@@ -1,4 +1,4 @@
-module changeme
+module com.fletisco.code-kit
 
 go 1.18
 

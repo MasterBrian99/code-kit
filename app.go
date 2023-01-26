@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+
+	"com.fletisco.code-kit/app/generators"
 )
 
 // App struct
@@ -24,4 +26,8 @@ func (a *App) startup(ctx context.Context) {
 // Greet returns a greeting for the given name
 func (a *App) Greet(name string) string {
 	return fmt.Sprintf("Hello %s, It's show time!", name)
+}
+
+func (a *App) GeneratePassword(input generators.GeneratePasswordInput) string {
+	return generators.GeneratePassword(input)
 }
