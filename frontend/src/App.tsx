@@ -1,7 +1,7 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 
-import MainScreen from './screens/MainScreen/MainScreen';
+import Router from './router/Router';
 import theme from './theme/theme';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         withGlobalStyles
         withNormalizeCSS
       >
-        <MainScreen />
+        <Router />
       </MantineProvider>
     </ColorSchemeProvider>
   );
